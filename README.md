@@ -4,6 +4,13 @@ A full-stack, next-generation Learning Management System (LMS) module combining 
 
 🎥 **[Watch the Explanation & Demo Video on Loom](https://www.loom.com/share/77a1585de25e43f2b1e722a06b1aea00)**
 
+## 📸 Application Gallery
+![Screenshot 1](screenshots/1.png)
+![Screenshot 2](screenshots/2.png)
+![Screenshot 3](screenshots/3.png)
+![Screenshot 4](screenshots/4.png)
+![Screenshot 5](screenshots/5.png)
+
 ## Core Features & Evaluation Highlights
 
 - **Sandboxed Docker Execution**: Student code runs securely inside ephemeral background containers using read-only host volume boundaries.
