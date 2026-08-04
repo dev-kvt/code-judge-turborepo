@@ -13,4 +13,5 @@ services:
       - DATABASE_URL=${DATABASE_URL}
       - GROQ_API_KEY=${GROQ_API_KEY}
       - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - HOST_PROJECT_DIR=${PWD}
     command: bash -c "apt-get update -y && apt-get install -y openssl --no-install-recommends && rm -rf /var/lib/apt/lists/* && rm -rf apps && yarn install --ignore-optional && rm -rf /usr/local/share/.cache/yarn && cd packages/database && npx prisma generate && cd ../worker-judge && docker build -t code-runner src/docker/ && npm run dev"

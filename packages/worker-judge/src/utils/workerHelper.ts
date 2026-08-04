@@ -108,9 +108,14 @@ async function executeDockerCommand({
   const executorFile = fs.readFileSync(executorFilePath, "utf-8");
   fs.writeFileSync(joinPath(directoryPath, "executor.sh"), executorFile);
 
+  // Convert container paths to host paths for Docker-in-Docker
+  const hostProjectDir = process.env.HOST_PROJECT_DIR || directoryPath;
+  const hostDirectoryPath = directoryPath.replace('/app', hostProjectDir);
+  const hostBuildPath = buildPath.replace('/app', hostProjectDir);
+
   const dockerCommand = `docker run --rm \
-  -v ${directoryPath}:/app:ro \
-  -v ${buildPath}:/app/build \
+  -v ${hostDirectoryPath}:/app:ro \
+  -v ${hostBuildPath}:/app/build \
   code-runner ${fileName}`;
 
   const startTime = new Date().getTime();
