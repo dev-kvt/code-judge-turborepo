@@ -35,24 +35,44 @@ export default function MainShowcasePage() {
         {/* Status Pills */}
         <div className="flex flex-wrap gap-3 mt-8">
           <span className="px-3 py-1 text-xs font-medium bg-neutral-800 text-neutral-300 rounded-md border border-neutral-700 flex items-center gap-1.5">
-            🛡️ Docker Sandboxed Execution
+            Docker Sandboxed Execution
           </span>
           <span className="px-3 py-1 text-xs font-medium bg-neutral-800 text-neutral-300 rounded-md border border-neutral-700 flex items-center gap-1.5">
-            ⚡ Dual-LLM Resilience (Groq ⇌ Gemini)
+            Dual-LLM Resilience (Groq / Gemini)
           </span>
           <span className="px-3 py-1 text-xs font-medium bg-neutral-800 text-neutral-300 rounded-md border border-neutral-700 flex items-center gap-1.5">
-            🔒 2-Stage Prompt Injection Defense
+            2-Stage Prompt Injection Defense
           </span>
           <span className="px-3 py-1 text-xs font-medium bg-neutral-800 text-neutral-300 rounded-md border border-neutral-700 flex items-center gap-1.5">
-            📋 Enforced Approval State Machine
+            Enforced Approval State Machine
           </span>
+        </div>
+      </section>
+
+      {/* Video Demo Section */}
+      <section className="px-6 py-12 mx-auto max-w-7xl lg:px-8 border-b border-neutral-800">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold tracking-tight text-white mb-2">Video Demo</h2>
+          <p className="text-sm text-neutral-400 mb-6">Watch a full walkthrough of the platform in action.</p>
+          <div className="relative rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl bg-black aspect-video">
+            <video
+              className="w-full h-full object-contain"
+              controls
+              preload="metadata"
+              playsInline
+            >
+              <source src="https://res.cloudinary.com/eiss6qy0/video/upload/v1785838990/Screen_Recording_2026-08-04_at_3.39.49_PM_il86ru.mov" type="video/quicktime" />
+              <source src="https://res.cloudinary.com/eiss6qy0/video/upload/v1785838990/Screen_Recording_2026-08-04_at_3.39.49_PM_il86ru.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </section>
 
       {/* Role Switcher Launchpad */}
       <section className="px-6 py-12 mx-auto max-w-7xl lg:px-8">
         <h2 className="text-2xl font-bold tracking-tight text-white mb-6 flex items-center gap-2">
-          <span>🚀 Interactive Portal Launchpad</span>
+          <span>Interactive Portal Launchpad</span>
           <span className="text-xs font-normal text-neutral-400 bg-neutral-800 px-2.5 py-1 rounded-full border border-neutral-700">
             Current Role: {role}
           </span>
@@ -62,7 +82,7 @@ export default function MainShowcasePage() {
           <div className="relative flex flex-col justify-between p-8 bg-neutral-900 rounded-2xl border border-neutral-800 hover:border-teal-500/50 transition-all duration-300 shadow-xl group hover:shadow-teal-500/5">
             <div>
               <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 text-2xl mb-6">
-                👨‍💻
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg>
               </div>
               <h3 className="text-2xl font-bold text-white group-hover:text-teal-400 transition-colors">
                 Continue as Student
@@ -89,7 +109,7 @@ export default function MainShowcasePage() {
           <div className="relative flex flex-col justify-between p-8 bg-neutral-900 rounded-2xl border border-neutral-800 hover:border-teal-500/50 transition-all duration-300 shadow-xl group hover:shadow-teal-500/5">
             <div>
               <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-400 text-2xl mb-6">
-                🧑‍🏫
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
               </div>
               <h3 className="text-2xl font-bold text-white group-hover:text-teal-400 transition-colors">
                 Continue as Teacher
@@ -129,7 +149,7 @@ export default function MainShowcasePage() {
           {/* Pipeline 1: Sandboxed Execution & AI Grader */}
           <div className="p-8 bg-neutral-900/80 rounded-2xl border border-neutral-800">
             <h3 className="text-lg font-bold text-teal-400 mb-2 flex items-center gap-2">
-              <span>⚡ Pipeline 1: Sandboxed Execution & Dual-LLM AI Grader</span>
+              <span>Pipeline 1: Sandboxed Execution and Dual-LLM AI Grader</span>
             </h3>
             <p className="text-sm text-neutral-300 mb-6">
               When a student submits code, it is transferred to an isolated background Node worker cluster. Execution occurs inside an ephemeral Docker container with read-only volume mounting to ensure complete host sandbox safety. Upon completion, the code and output are processed by our dual-provider LangChain AI grading engine.
@@ -162,7 +182,7 @@ export default function MainShowcasePage() {
           {/* Pipeline 2: 2-Stage Prompt Injection Guardrails */}
           <div className="p-8 bg-neutral-900/80 rounded-2xl border border-neutral-800">
             <h3 className="text-lg font-bold text-rose-400 mb-2 flex items-center gap-2">
-              <span>🛡️ Pipeline 2: Two-Stage Prompt Injection & Manipulation Guardrails</span>
+              <span>Pipeline 2: Two-Stage Prompt Injection and Manipulation Guardrails</span>
             </h3>
             <p className="text-sm text-neutral-300 mb-6">
               To prevent malicious submissions from attempting to override automated grading scores, alter LLM personality instructions, or extract system prompts, we enforce a strict 2-stage defensive architecture before any LLM execution occurs.
@@ -195,7 +215,7 @@ export default function MainShowcasePage() {
           {/* Pipeline 3: Doubt Resolution State Machine */}
           <div className="p-8 bg-neutral-900/80 rounded-2xl border border-neutral-800">
             <h3 className="text-lg font-bold text-amber-400 mb-2 flex items-center gap-2">
-              <span>📋 Pipeline 3: Enforced Doubt Resolution Approval State Machine</span>
+              <span>Pipeline 3: Enforced Doubt Resolution Approval State Machine</span>
             </h3>
             <p className="text-sm text-neutral-300 mb-6">
               When a student asks a technical question on the doubt board, an AI suggested answer is generated autonomously. However, to guarantee pedagogical accuracy, the system enforces a database-level state machine requiring human-in-the-loop teacher validation before broadcasting.
