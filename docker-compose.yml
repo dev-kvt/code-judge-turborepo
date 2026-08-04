@@ -12,4 +12,4 @@ services:
       - DATABASE_URL=${DATABASE_URL}
       - GROQ_API_KEY=${GROQ_API_KEY}
       - GEMINI_API_KEY=${GEMINI_API_KEY}
-    command: bash -c "yarn install --ignore-optional --child-concurrency 1 && yarn cache clean && cd packages/database && npx prisma generate && cd ../worker-judge && npm run dev"
+    command: bash -c "rm -rf apps && yarn install --ignore-optional && rm -rf /usr/local/share/.cache/yarn && cd packages/database && npx prisma generate && cd ../worker-judge && npm run dev"
