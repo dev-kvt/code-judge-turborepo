@@ -18,7 +18,5 @@
     "db:generate": {
       "cache": false
     }
-  },
-  "globalDotEnv": [".env"]
+  }
 }
-
