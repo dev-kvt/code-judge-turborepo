@@ -5,7 +5,9 @@
     "dx": "docker-compose up -d && dotenv -- turbo run dev",
     "dev": "dotenv -- turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "db:pushschema": "turbo run db:pushschema",
+    "db:generate": "turbo run db:generate"
   },
   "devDependencies": {
     "dotenv-cli": "latest",
