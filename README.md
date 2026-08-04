@@ -1,6 +1,6 @@
 # AI-Powered Code Grading & Doubt Resolution Portal
 
-**Submitted by:** Divyansh Kumar  
+**Submitted by:** Divyansh Singh  
 **GitHub:** [github.com/dev-kvt/code-judge-turborepo](https://github.com/dev-kvt/code-judge-turborepo)  
 **Video Demo:** [Watch on Loom](https://www.loom.com/share/77a1585de25e43f2b1e722a06b1aea00)
 

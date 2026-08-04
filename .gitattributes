@@ -1,0 +1,5 @@
+# Exclude JavaScript and CSS files from GitHub language statistics
+*.js linguist-generated=true
+*.css linguist-generated=true
+
+
