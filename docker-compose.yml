@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   app:
     image: node:20-bookworm-slim
@@ -14,8 +12,4 @@ services:
       - DATABASE_URL=${DATABASE_URL}
       - GROQ_API_KEY=${GROQ_API_KEY}
       - GEMINI_API_KEY=${GEMINI_API_KEY}
-      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-      - AWS_REGION=${AWS_REGION}
-      - S3_BUCKET_NAME=${S3_BUCKET_NAME}
-    command: bash -c "yarn install --ignore-optional && yarn cache clean && cd packages/database && npx prisma generate && cd ../worker-judge && npm run dev"
+    command: bash -c "yarn install --ignore-optional --child-concurrency 1 && yarn cache clean && cd packages/database && npx prisma generate && cd ../worker-judge && npm run dev"
