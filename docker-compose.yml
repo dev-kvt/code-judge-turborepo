@@ -6,10 +6,11 @@ services:
       - 4000:4000
     volumes:
       - .:/app
-      - /var/run/docker.sock:/var/run/docker.sock 
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
     working_dir: /app
     environment:
       - DATABASE_URL=${DATABASE_URL}
       - GROQ_API_KEY=${GROQ_API_KEY}
       - GEMINI_API_KEY=${GEMINI_API_KEY}
-    command: bash -c "apt-get update -y && apt-get install -y openssl docker.io --no-install-recommends && rm -rf /var/lib/apt/lists/* && rm -rf apps && yarn install --ignore-optional && rm -rf /usr/local/share/.cache/yarn && cd packages/database && npx prisma generate && cd ../worker-judge && docker build -t code-runner src/docker/ && npm run dev"
+    command: bash -c "apt-get update -y && apt-get install -y openssl --no-install-recommends && rm -rf /var/lib/apt/lists/* && rm -rf apps && yarn install --ignore-optional && rm -rf /usr/local/share/.cache/yarn && cd packages/database && npx prisma generate && cd ../worker-judge && docker build -t code-runner src/docker/ && npm run dev"
