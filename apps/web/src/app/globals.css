@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: black;
+}
+
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.17em;
+}
+h5 {
+  font-size: 0.83em;
+}
+h6 {
+  font-size: 0.75em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bolder;
+}
+body {
+  color: white;
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+code {
+  font-family: "Roboto Mono", monospace;
+  flex-wrap: wrap;
+  display: flex;
+  font-weight: 400;
+  overflow: auto;
+  font-size: 14px;
+  background-color: rgb(66, 66, 66);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.code_container {
+  display: block;
+  background-color: rgb(66, 66, 66);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.border-default {
+  border-width: 0.3px;
+  @apply border-neutral-600 border-opacity-70;
+}
+
+.border-default-bottom {
+  border-bottom-width: 0.3px;
+  @apply border-neutral-600 border-opacity-70;
+}
+.border-default-top {
+  border-top-width: 0.3px;
+  @apply border-neutral-600 border-opacity-70;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(128, 128, 128, 0);
+  border-radius: 10px;
+}
+
+.hide-multi-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: calc(50vw);
+}
+
+.cta-button-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 md:py-4 px-6 md:px-10 rounded;
+}
+
+.cta-button-gray {
+  @apply bg-gray-900 hover:bg-gray-800 text-white font-bold py-2 md:py-4 px-6 md:px-10 rounded;
+}

@@ -1,0 +1,100 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String       @id @default(uuid())
+  username    String       @unique
+  name        String
+  email       String       @unique
+  password    String
+  problems    Problem[]
+  submissions Submission[]
+  doubts      Doubt[]
+}
+
+model Problem {
+  id               String       @id @default(uuid())
+  title            String
+  description      String
+  difficulty       Difficulty
+  authorId         String
+  author           User         @relation(fields: [authorId], references: [id])
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+  boilerplate      String
+  acceptanceRate   Float        @default(0)
+  totalSubmissions Int          @default(0)
+  submissions      Submission[]
+  doubts           Doubt[]
+}
+
+model Submission {
+  id        String   @id @default(uuid())
+  problemId String
+  problem   Problem  @relation(fields: [problemId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  code      String
+  language  Language
+  status    Status   @default(PENDING)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  output     String?
+  time       String?
+  memory     String?
+  aiFeedback String?
+}
+
+enum Language {
+  CPP
+  C
+  JAVA
+  PYTHON
+}
+
+enum Status {
+  AC
+  WA
+  TLE
+  RTE
+  CE
+  MLE
+  RE
+  PENDING
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+model Doubt {
+  id            String      @id @default(uuid())
+  title         String
+  content       String
+  problemId     String?
+  problem       Problem?    @relation(fields: [problemId], references: [id])
+  userId        String
+  user          User        @relation(fields: [userId], references: [id])
+  status        DoubtStatus @default(PENDING_REVIEW)
+  aiDraftAnswer String?
+  finalAnswer   String?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
+
+enum DoubtStatus {
+  PENDING_REVIEW
+  APPROVED
+  REJECTED
+}

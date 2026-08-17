@@ -1,0 +1,4 @@
+{
+  "extends": "@kpmg/tsconfig/base.json",
+  "include": ["index.ts"]
+}
